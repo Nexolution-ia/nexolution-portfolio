@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.impeccable/build/
+.impeccable/review/
+.impeccable/mocks/*
+!.impeccable/mocks/decision/
+.impeccable/mocks/decision/*
+!.impeccable/mocks/decision/assigned.png
+!.impeccable/mocks/decision/assigned.png.json
+.impeccable/direction-options.json
+.impeccable/live/
+.impeccable/questions/
