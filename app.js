@@ -125,7 +125,7 @@ function onScroll(){
   scrollIndex=index;autoPlay(demoTabs[index].dataset.demo);
 }
 function goTo(name){
-  if(!scrollMode.matches){selectDemo(name);return;}
+  if(!scrollMode.matches){autoPlay(name);return;}
   const i=demoTabs.findIndex(tab=>tab.dataset.demo===name);
   const [start,end]=scrollRange();
   scrollTo({top:start+(end-start)*(i+.5)/demoTabs.length,behavior:'smooth'});
@@ -134,6 +134,15 @@ function syncScrollMode(){document.documentElement.classList.toggle('scroll-demo
 scrollMode.addEventListener('change',syncScrollMode);
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 syncScrollMode();
+// Sem rolagem guiada (celular), a primeira demo inicia quando o painel aparece e cada aba toca sozinha ao ser escolhida.
+if('IntersectionObserver' in window){
+  const firstPlay=new IntersectionObserver(entries=>{
+    if(!entries.some(entry=>entry.isIntersecting))return;
+    firstPlay.disconnect();
+    if(!scrollMode.matches&&currentDemo==='atendimento')autoPlay('atendimento');
+  },{threshold:.35});
+  firstPlay.observe(document.getElementById('demo-panel'));
+}
 
 // A abertura acontece uma vez; no restante da página, a rolagem só revela
 // os visuais dos projetos e as linhas que ligam os serviços.
