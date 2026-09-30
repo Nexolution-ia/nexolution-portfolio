@@ -20,11 +20,11 @@
 
 /* Marca fornecida como referência visual pelo cliente. */
 .wordmark{display:inline-flex;align-items:center;gap:0}
-.wordmark img{width:43px;height:auto;margin-right:1px;flex:none;filter:saturate(.93) brightness(.91)}
+.wordmark img{width:46px;height:auto;margin-right:6px;flex:none}
 .wordmark span{display:inline-block}
 .app-wordmark{display:flex;align-items:center;gap:2px}
-.app-wordmark img{width:19px;height:auto;flex:none}
-.site-footer .wordmark img{width:35px}
+.app-wordmark img{width:15px;height:auto;flex:none;margin-right:2px}
+.site-footer .wordmark img{width:29px}
 
 /* Movimento em uma única abertura, seguido por respostas pontuais à navegação. */
 @keyframes headline-uncover{from{clip-path:inset(-.2em 100% -.3em -.05em)}to{clip-path:inset(-.2em -.05em -.3em -.05em)}}
