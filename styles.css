@@ -73,3 +73,5 @@ html.scroll-demo .demo-panel{min-height:490px}
 @media(max-width:1000px){.process-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.process-list>li{padding-bottom:26px}.process-top{margin-bottom:36px}}
 @media(max-width:560px){.process-list{grid-template-columns:1fr}.process-list h3{font-size:24px}.process-list>li>p{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.process-list>li:hover{transform:none}}
+
+@media(max-width:760px){.wordmark img{width:34px;margin-right:5px}.site-footer .wordmark img{width:28px}}

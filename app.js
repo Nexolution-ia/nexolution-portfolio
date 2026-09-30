@@ -104,7 +104,8 @@ selectDemo('atendimento');
 
 // Rolagem guiada (desktop): cada terço da seção escolhe e inicia uma demonstração.
 const showcase=document.querySelector('.showcase');
-const scrollMode=matchMedia('(prefers-reduced-motion: no-preference)');
+// Só em tela larga: no celular o painel é alto e as abas ficam manuais.
+const scrollMode=matchMedia('(min-width: 1001px) and (prefers-reduced-motion: no-preference)');
 let scrollIndex=-1;
 // Do topo da página (ou de quando a seção entra na tela) até a base da seção passar de 50% da tela.
 function scrollRange(){const docTop=showcase.getBoundingClientRect().top+scrollY;const start=Math.max(0,docTop-innerHeight*.7);return [start,Math.max(start+1,docTop+showcase.offsetHeight-innerHeight*.5)];}
